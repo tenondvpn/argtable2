@@ -34,6 +34,17 @@ USA.
 /* local error codes */
 enum {EMINCOUNT=1,EMAXCOUNT,EBADINT,EOVERFLOW};
 
+static bool isspace(char c) {
+    return c == ' ';
+}
+
+static char toupper(char c) {
+    if (c >= 'a' && c <= 'z') {
+        return c - 32;
+    }
+    return c;
+}
+
 static void resetfn(struct arg_int *parent)
     {
     /*printf("%s:resetfn(%p)\n",__FILE__,parent);*/

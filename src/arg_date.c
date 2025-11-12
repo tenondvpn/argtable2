@@ -37,10 +37,15 @@ USA.
 #include <strings.h>
 #endif
 
+#include <string.h>
+
 #include "argtable2.h"
 
 /* local error codes  */
 enum {EMINCOUNT=1,EMAXCOUNT,EBADDATE};
+static void bzero(void *s, size_t n) {
+    memset(s, 0, n);
+}
 
 static void resetfn(struct arg_date *parent)
     {
